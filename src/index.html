@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My first Vue page</title>
+    <title>v-bind background-color</title>
+    <style>
+      #app > div {
+        width: 200px;
+        padding: 20px;
+        border: dashed black 1px;
+      }
+    </style>
   </head>
   <body>
+    <h1>Example: 'v-bind' with Conditional Background Color</h1>
     <div id="app">
-      {{ message }} <br />
-      {{ 'Random number: ' + Math.ceil(Math.random() * 6) }}
+      <div
+        v-bind:style="{ backgroundColor: isImportant ? 'lightcoral' : 'lightgray' }"
+      >
+        Importance based on background color
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
       const app = Vue.createApp({
         data() {
           return {
-            message: "Hello World!",
+            isImportant: false,
           };
         },
       });
