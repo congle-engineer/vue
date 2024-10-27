@@ -19,16 +19,16 @@
   <body>
     <h1>Example: 'v-for' to create li-tags</h1>
     <div id="app">
-      <ol>
-        <li v-for="x in manyFoods">{{ x }}</li>
-      </ol>
+      <p>{{ "Count: " + count }}</p>
+      <br />
+      <button v-on:click="count++">Count</button>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
       const app = Vue.createApp({
         data() {
           return {
-            manyFoods: ["Salad", "Cake", "Soup", "Fish", "Pizza", "Rice"],
+            count: 0,
           };
         },
       });
